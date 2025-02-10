@@ -10,7 +10,8 @@ public class Main{
             numbers.add(sc.nextInt());
         }
         
-        Collections.sort(numbers);
+        // 오른차순으로 정렬
+        numbers.sort(null);
         
         for(int number : numbers){
             System.out.println(number);
