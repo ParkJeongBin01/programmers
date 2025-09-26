@@ -16,28 +16,32 @@ class Solution {
         }
         
         for(int i = 0; i < n; i++){
+            StringBuilder sb = new StringBuilder();
             char[] char1 = String1[i].toCharArray();
             char[] char2 = String2[i].toCharArray();    
             for(int j = 0; j < n; j++){
                 if(char1[j] == '1' || char2[j] == '1'){
                     ok[i][j] = true;
+                    sb.append("#"); 
                 } else {
                     ok[i][j] = false;
-                }
-            }
-        }
-        
-        for(int i = 0; i < n; i++){
-            StringBuilder sb = new StringBuilder();
-            for(int j = 0; j < n; j++){
-                if(ok[i][j] == true){
-                   sb.append("#"); 
-                } else {
                     sb.append(' ');
                 }
             }
             answer[i] = sb.toString();
         }
+        
+        // for(int i = 0; i < n; i++){
+        //     StringBuilder sb = new StringBuilder();
+        //     for(int j = 0; j < n; j++){
+        //         if(ok[i][j] == true){
+        //            sb.append("#"); 
+        //         } else {
+        //             sb.append(' ');
+        //         }
+        //     }
+        //     answer[i] = sb.toString();
+        // }
         return answer;
     }
 }
